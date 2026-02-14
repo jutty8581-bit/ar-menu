@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AR Restaurant Menu</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs>
+    
+    <!-- Camera -->
+    <a-marker preset="hiro">
+      
+      <!-- 3D Menu Box -->
+      <a-box position="0 0.5 0" 
+             material="color: orange;"
+             animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
+      </a-box>
+
+      <!-- Menu Text -->
+      <a-text value="Burger - $5 \nPizza - $8 \nDrink - $2"
+              position="-1 1 0"
+              color="white"
+              width="4">
+      </a-text>
+
+    </a-marker>
+
+    <a-entity camera></a-entity>
+
+  </a-scene>
+</body>
+</html>
